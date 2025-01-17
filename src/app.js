@@ -7,6 +7,7 @@ const express = require('express');
 const config = require('./config/env');
 const db = require('./config/db');
 const courseRoutes = require('./routes/courseRoutes');
+const studentRoutes = require('./routes/studentRoutes'); // Import des routes des étudiants
 
 const app = express();
 
@@ -23,6 +24,7 @@ async function startServer() {
 
     // Monter les routes
     app.use('/api/courses', courseRoutes);
+    app.use('/api/students', studentRoutes); // Ajout des routes des étudiants
 
     // Démarrer le serveur
     app.listen(config.port, () => {
