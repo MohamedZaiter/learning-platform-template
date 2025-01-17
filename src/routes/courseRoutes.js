@@ -11,6 +11,9 @@ const courseController = require('../controllers/courseController');
 router.post('/addCourse', courseController.createCourse);    
 router.get('/:id', courseController.getCourse);
 router.get('/', courseController.listCourses);
+router.get('/stats', courseController.getCourseStats);
+router.put('/:id', courseController.updateCourse);
+router.delete('/:id', courseController.deleteCourse);
 
 module.exports = router;
 // Question: Pourquoi créer des services séparés ?
